@@ -5,10 +5,15 @@ import {
   List,
   useTheme,
   useMediaQuery,
+  ListItemButton,
+  ListItemIcon,
+  Icon,
+  ListItemText,
 } from '@mui/material';
 import { Box } from '@mui/system';
 import { ListItemLink } from 'components/ListItemLink';
 import { useDrawer } from 'hooks/useDrawer';
+import { useMode } from 'hooks/useMode';
 
 export type SidebarMenuProps = {
   children: React.ReactNode;
@@ -19,6 +24,7 @@ export function SidebarMenu({ children }: SidebarMenuProps) {
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawer();
+  const { toggleTheme } = useMode();
 
   return (
     <>
@@ -49,16 +55,26 @@ export function SidebarMenu({ children }: SidebarMenuProps) {
           <Divider />
 
           <Box flex={1}>
+            {drawerOptions.map((drawerOption) => (
+              <ListItemLink
+                key={drawerOption.path}
+                icon={drawerOption.icon}
+                label={drawerOption.label}
+                to={drawerOption.path}
+                onClick={smDown ? toggleDrawerOpen : undefined}
+              />
+            ))}
+          </Box>
+          <Box>
             <List component="nav">
-              {drawerOptions.map((drawerOption) => (
-                <ListItemLink
-                  key={drawerOption.path}
-                  icon={drawerOption.icon}
-                  label={drawerOption.label}
-                  to={drawerOption.path}
-                  onClick={smDown ? toggleDrawerOpen : undefined}
-                />
-              ))}
+              <List component="nav">
+                <ListItemButton onClick={toggleTheme}>
+                  <ListItemIcon>
+                    <Icon>dark_mode</Icon>
+                  </ListItemIcon>
+                  <ListItemText primary="Alternar tema" />
+                </ListItemButton>
+              </List>
             </List>
           </Box>
         </Box>
