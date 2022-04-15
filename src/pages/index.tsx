@@ -1,5 +1,5 @@
-import HelloWorld from '../components/HelloWorld';
+import { Home } from 'templates/Home';
 
-export default function Home() {
-  return <HelloWorld />;
+export default function HomePage() {
+  return <Home />;
 }
