@@ -8,13 +8,13 @@ export const DarkTheme = createTheme({
       main: yellow[700],
       dark: yellow[800],
       light: yellow[500],
-      contrastText: '#ffffff',
+      contrastText: '#202124',
     },
     secondary: {
       main: cyan[500],
       dark: cyan[400],
       light: cyan[300],
-      contrastText: '#ffffff',
+      contrastText: '#202124',
     },
     background: {
       default: '#202124',
