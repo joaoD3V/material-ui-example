@@ -7,7 +7,7 @@ import {
   TextField,
 } from '@mui/material';
 
-export type ToolbarProps = {
+export type ListingToolProps = {
   searchText?: string;
   showSearchInput?: boolean;
   onChangeSearchText?: (newText: string) => void;
@@ -16,14 +16,14 @@ export type ToolbarProps = {
   onClickButton?: () => void;
 };
 
-export function Toolbar({
+export function ListingTool({
   searchText = '',
   showSearchInput = false,
   onChangeSearchText,
   buttonText = 'Novo',
   showButton = true,
   onClickButton,
-}: ToolbarProps) {
+}: ListingToolProps) {
   return (
     <Box
       gap={1}

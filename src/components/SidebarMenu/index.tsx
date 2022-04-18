@@ -67,14 +67,12 @@ export function SidebarMenu({ children }: SidebarMenuProps) {
           </Box>
           <Box>
             <List component="nav">
-              <List component="nav">
-                <ListItemButton onClick={toggleTheme}>
-                  <ListItemIcon>
-                    <Icon>dark_mode</Icon>
-                  </ListItemIcon>
-                  <ListItemText primary="Alternar tema" />
-                </ListItemButton>
-              </List>
+              <ListItemButton onClick={toggleTheme}>
+                <ListItemIcon>
+                  <Icon>dark_mode</Icon>
+                </ListItemIcon>
+                <ListItemText primary="Alternar tema" />
+              </ListItemButton>
             </List>
           </Box>
         </Box>

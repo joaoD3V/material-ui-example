@@ -1,12 +1,15 @@
 import { SidebarMenu } from 'components/SidebarMenu';
-import { Toolbar } from 'components/Toolbar';
 import { Base } from 'templates/Base';
+import { DetailTool } from 'components/DetailTool';
 
 export function Home() {
   return (
     <>
       <SidebarMenu>
-        <Base title="Página Inicial" toolbar={<Toolbar showSearchInput />}>
+        <Base
+          title="Página Inicial"
+          toolbar={<DetailTool showButtonSaveBack />}
+        >
           Testando
         </Base>
       </SidebarMenu>
